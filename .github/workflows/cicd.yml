@@ -37,4 +37,13 @@ jobs:
           pip install -e '.[test]'
           python -m coverage run -m pytest
           python -m coverage report
+  Heroku:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: "0dd3b743-a814-4021-8adb-3cbd421334c8"
+          heroku_app_name: "romatestapp" #Must be unique in Heroku
+          heroku_email: "rkbalayan@edu.hse.ru"
     
